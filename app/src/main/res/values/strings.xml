@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Base</string>
+    <string name="network_error">Network Error. Please try again</string>
+    <string name="server_error">Server Error. Please try again</string>
+    <string name="xml_error">xml_error</string>
+    <string name="discover_breaking_news">Discover Breaking News! 🔥</string>
+    <string name="content">Make it easy for users to access the latest and most recent news quickly and easily from a single platform.</string>
+</resources>
