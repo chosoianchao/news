@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.base.ui.translate.NewsFragment"
+        android:name="com.example.base.ui.news.NewsFragment"
         android:label="TranslateFragment"
         tools:layout="@layout/news_fragment">
         <action

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_all"
+        android:title="@string/all" />
+    <item
+        android:id="@+id/id_1_hour"
+        android:title="@string/_1_gi" />
+    <item
+        android:id="@+id/item_1_day"
+        android:title="@string/_1_ng_y" />
+    <item
+        android:id="@+id/item_3_day"
+        android:title="@string/_3_ng_y" />
+</menu>

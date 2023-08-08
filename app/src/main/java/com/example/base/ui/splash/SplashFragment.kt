@@ -1,5 +1,6 @@
 package com.example.base.ui.splash
 
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.base.R
 import com.example.base.SingleEventObserver
@@ -12,11 +13,10 @@ class SplashFragment : BaseFragment<SplashFragmentBinding>() {
     override val layoutResource: Int
         get() = R.layout.splash_fragment
 
+    override fun initViewBinding(view: View): SplashFragmentBinding =
+        SplashFragmentBinding.bind(view)
+
     override fun initViews() {
-        with(binding) {
-            lifecycleOwner = viewLifecycleOwner
-            viewModel = this@SplashFragment.viewModel
-        }
     }
 
     override fun observeViewModel() {

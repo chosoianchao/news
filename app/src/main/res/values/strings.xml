@@ -5,4 +5,9 @@
     <string name="xml_error">xml_error</string>
     <string name="discover_breaking_news">Discover Breaking News! 🔥</string>
     <string name="content">Make it easy for users to access the latest and most recent news quickly and easily from a single platform.</string>
+    <string name="search">Search</string>
+    <string name="all">All</string>
+    <string name="_1_gi"><![CDATA[<= 1 giờ]]></string>
+    <string name="_1_ng_y"><![CDATA[<= 1 ngày]]></string>
+    <string name="_3_ng_y"><![CDATA[<= 3 ngày]]></string>
 </resources>

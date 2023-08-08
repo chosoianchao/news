@@ -1,21 +1,23 @@
 package com.example.base.base
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<VB : ViewDataBinding>(private val layoutId: Int) :
+abstract class BaseActivity<VB : ViewBinding>(private val layoutId: Int) :
     AppCompatActivity() {
     protected var binding: VB? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, layoutId)
-        binding?.lifecycleOwner = this
+        val view = LayoutInflater.from(this).inflate(layoutId, null)
+        binding = initViewBinding(view)
+        setContentView(view)
+        initViews()
     }
 
     protected abstract fun initViews()
-
+    protected abstract fun initViewBinding(view: View): VB
 }

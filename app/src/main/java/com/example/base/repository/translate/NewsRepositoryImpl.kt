@@ -1,13 +1,17 @@
 package com.example.base.repository.translate
 
 import android.util.Xml
+import com.example.base.local.AppDataBase
 import com.example.base.model.Item
 import com.example.base.network.NetworkService
 import okhttp3.ResponseBody
 import org.xmlpull.v1.XmlPullParser
 import java.io.*
 
-class NewsRepositoryImpl(private val networkService: NetworkService) : NewsRepository {
+class NewsRepositoryImpl(
+    private val networkService: NetworkService,
+    private val appDataBase: AppDataBase
+) : NewsRepository {
     override suspend fun getNews(): ResponseBody {
         return networkService.getNews()
     }
@@ -50,6 +54,14 @@ class NewsRepositoryImpl(private val networkService: NetworkService) : NewsRepos
             eventType = parser.next()
         }
         return itemList
+    }
+
+    override suspend fun insertNews(item: Item) {
+        appDataBase.newsDao().insert(item)
+    }
+
+    override suspend fun deleteNews(item: Item) {
+        appDataBase.newsDao().delete(item)
     }
 
     // Hàm hỗ trợ để phân tích một mục (item)
